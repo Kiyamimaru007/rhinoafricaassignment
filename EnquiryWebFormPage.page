@@ -1,0 +1,57 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+    <html>
+        <head>
+            <title>My Visualforce Page</title>
+            <apex:includeLightning />
+            <style>
+                body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+            
+                #headerAndImageContainer {
+                    max-width: 50rem;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                }
+            
+                #header {
+                    font-size: 92px;
+                    font-weight: bold;
+                    margin-left: 20px;
+                    color: #990100; /* Set the text color to #990100 */
+                }
+            
+                #image {
+                    max-height: 200px;
+                    max-width: 200px;
+                    margin-right: 20px;
+                }
+            
+                #lightning {
+                    width: 100%;
+                }
+            </style>            
+        </head>
+        <body>
+            <div id="headerAndImageContainer">
+                <div id="imageContainer">
+                    <img id="image" alt="Image Not Found" src="https://scontent.fcpt2-1.fna.fbcdn.net/v/t39.30808-6/358673526_653520753475959_6600997207756539903_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Os_0a4apb74AX-MwoKd&_nc_zt=23&_nc_ht=scontent.fcpt2-1.fna&oh=00_AfCApYzMHQgVK8yf3w4hHruPfFrKcR-nUnvotcCeM0kNZA&oe=655714B3"/>
+                </div>
+                <div id="header">Enquiry Form</div>
+            </div>
+            <div id="lightning"></div>
+            <script>
+                $Lightning.use("c:EnquiryApp", function() {
+                    $Lightning.createComponent("c:EnquiryLWC", {}, "lightning", function(cmp) {});
+                });
+            </script>
+        </body>
+    </html>
+</apex:page>
+

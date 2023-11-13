@@ -1,0 +1,54 @@
+<template>
+    <div class="slds-grid slds-align_absolute-center">
+        <lightning-card class="slds-box slds-theme_default custom-card">
+            <div class="slds-grid slds-wrap">
+                <!-- First Column -->
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                    <lightning-input label="First Name" value={firstName} onchange={handleFirstName} required></lightning-input>
+                    <lightning-input label="Last Name" value={lastName} onchange={handleLastName} required></lightning-input>
+                    <lightning-combobox
+                        label="Country"
+                        value={country}
+                        options={countryOptions}
+                        onchange={handleCountry}
+                        required
+                    ></lightning-combobox>
+                    <lightning-input label="Arrival Date" type="date" value={arrivalDate} onchange={handleArrivalDate}></lightning-input>
+                    <lightning-input label="Number of Adults" type="number" value={numAdults} onchange={handleNumAdults} pattern="[0-9]*" required></lightning-input>
+                    <lightning-input label="Number of Children" type="number" value={numChildren} onchange={handleNumChildren} pattern="[0-9]*"></lightning-input>
+                </div>
+                
+                <!-- Second Column -->
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                    <lightning-input label="Email" type="email" value={email} onchange={handleEmail} required></lightning-input>
+                    <lightning-input label="Phone" type="tel" value={phone} onchange={handlePhone}></lightning-input>
+                    <lightning-combobox
+                        label="Holiday Type"
+                        value={holidayType}
+                        options={holidayOptions}
+                        onchange={handleHolidayType}
+                        required
+                    ></lightning-combobox>
+                    <lightning-input label="Departure Date" type="date" value={departureDate} onchange={handleDepartureDate}></lightning-input>
+                    <lightning-combobox
+                        label="Enquiry Type"
+                        value={enquiryType}
+                        options={enquiryOptions}
+                        onchange={handleEnquiryType}
+                        required
+                    ></lightning-combobox>
+                </div>
+                
+                <!-- Comments -->
+                <div class="slds-col slds-size_2-of-2 slds-p-around_medium">
+                    <lightning-textarea class="slds-input" label="Comments" value={comments} onchange={handleComments} style="height: 150px;"></lightning-textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="slds-col slds-size_1-of-1 slds-m-around_medium">
+                    <lightning-button label="Submit" variant="brand" onclick={handleFormSubmit}></lightning-button>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>
